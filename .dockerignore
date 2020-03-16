@@ -1,0 +1,10 @@
+.DS_Store
+.dockerignore
+.git
+.gitignore
+Dockerfile
+docker-*
+test_*
+media/
+static/
+node_modules/
