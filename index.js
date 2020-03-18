@@ -3,20 +3,24 @@ const mjml = require("mjml");
 const package = require("./package.json");
 
 fastify.post("/", (request, reply) => {
-  if (typeof request.body.mjml === "undefined" || request.body.mjml === null) {
+  if (typeof request.body === "undefined" || request.body === null) {
     reply.send({});
     return;
   }
 
-  let result = mjml(request.body.mjml);
+  try {
+    let result = mjml(request.body);
 
-  if (Object.keys(result.errors).length) {
-    Object.keys(result.errors).forEach(key => {
-      delete result.errors[key].formattedMessage;
-    });
+    if (Object.keys(result.errors).length) {
+      Object.keys(result.errors).forEach(key => {
+        delete result.errors[key].formattedMessage;
+      });
+    }
+
+    reply.send(result.html);
+  } catch (error) {
+    reply.send(error);
   }
-
-  reply.send(result);
 });
 
 fastify.get("/status", (request, reply) => {
