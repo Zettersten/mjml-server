@@ -1,5 +1,7 @@
 # Simple MJML Server
 
+![Docker Automated build](https://img.shields.io/docker/automated/zettersten/mjml-server?style=for-the-badge)
+
 ## Installation
 
 * Install dependencies
