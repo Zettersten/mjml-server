@@ -13,4 +13,4 @@ ENV PORT=${DEFAULT_PORT}
 
 EXPOSE ${DEFAULT_PORT}
 
-ENTRYPOINT /app/index.js --hostname ${HOST} --port ${PORT}
+ENTRYPOINT ["node", "app/index.js -hostname ${HOST} --port ${PORT}"]
