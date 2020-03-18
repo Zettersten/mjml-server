@@ -1,0 +1,18 @@
+{
+  "name": "mjml.emoney.com",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests/test.js"
+  },
+  "author": "Erik Zettersten",
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "^2.12.1",
+    "mjml": "^4.6.2"
+  },
+  "devDependencies": {
+    "request": "^2.88.0"
+  }
+}
